@@ -2,7 +2,7 @@
 /**
  * @package	   Convert MARC21 to Qi CMS
  * @author	   Keepthinking
- * @copyright  Copyright (c) 2015, Keepthinking (http://keepthinking.it/)
+ * @copyright      Copyright (c) 2015, Keepthinking (http://keepthinking.it/)
  * @license	   http://opensource.org/licenses/MIT	MIT License
  * @link	   http://keepthinking.it
  * @since	   Version 1.0.0
@@ -14,11 +14,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  *
  * Has methods to insert records and to insert/update list values
  *
- * @package		Convert MARC21 to Qi CMS
- * @subpackage	Controllers
- * @category	Controllers
- * @author		Keepthinking
- * @link		http://keepthinking.it
+ * @package        Convert MARC21 to Qi CMS
+ * @subpackage	   Controllers
+ * @category	   Controllers
+ * @author	   Keepthinking
+ * @link	   http://keepthinking.it
  */
 class M_convert extends CI_Model {
 
