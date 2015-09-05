@@ -25,6 +25,16 @@ The tool can only be used via command line.
  - <code>php index.php convert index true</code> runs the script after truncating the required tables
  - <code>php index.php convert truncate</code> only truncates the tables
 
+Warning
+-------
+- The tool will not create tables and fields if they don't exist not it has error control. So it's the user's responsibility to check that the configuration is correct before running the script.
+- As with anything making changes to a database, this tool __may corrupt your data__. Do make sure __you make a full backup__ before any use. 
+- Keepthinking will not accept any responsibility for misues or data loss.
+
+Consulting
+----------
+If you need any help configuring or using this tool, please [contact us](mailto:info@keepthinking.it).
+
 Copyright
 ------------
-Copyright Keepthinking 2015
+Copyright Keepthinking 2015 - [www.keepthinking.it](http://www.keepthinking.it)
