@@ -1,11 +1,11 @@
 <?php
 /**
- * @package	   Convert MARC21 to Qi CMS
- * @author	   Keepthinking
- * @copyright  Copyright (c) 2015, Keepthinking (http://keepthinking.it/)
- * @license	   http://opensource.org/licenses/MIT	MIT License
- * @link	   http://keepthinking.it
- * @since	   Version 1.0.0
+ * @package	Convert MARC21 to Qi CMS
+ * @author	Keepthinking
+ * @copyright	Copyright (c) 2015, Keepthinking (http://keepthinking.it/)
+ * @license	http://opensource.org/licenses/MIT	MIT License
+ * @link	http://keepthinking.it
+ * @since	Version 1.0.0
  * @filesource
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
@@ -15,11 +15,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * This is a single controller class, where the entire process in managed
  * through the index function
  *
- * @package		Convert MARC21 to Qi CMS
+ * @package	Convert MARC21 to Qi CMS
  * @subpackage	Controllers
  * @category	Controllers
- * @author		Keepthinking
- * @link		http://keepthinking.it
+ * @author	Keepthinking
+ * @link	http://keepthinking.it
  */
 class Convert extends CI_Controller {
 	/**
