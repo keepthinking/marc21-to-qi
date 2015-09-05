@@ -15,8 +15,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Has methods to insert records and to insert/update list values
  *
  * @package        Convert MARC21 to Qi CMS
- * @subpackage	   Controllers
- * @category	   Controllers
+ * @subpackage	   Models
+ * @category	   Models
  * @author	   Keepthinking
  * @link	   http://keepthinking.it
  */
