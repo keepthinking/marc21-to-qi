@@ -1,5 +1,5 @@
 # marc21-to-qi
-Conversion for MARC21 XML to [Qi CMS](www.qi-cms.com) - Uses [CodeIgniter 3.0.1](http://www.codeigniter.com)
+Conversion for MARC21 XML to [Qi CMS](http://www.qi-cms.com) - Uses [CodeIgniter 3.0.1](http://www.codeigniter.com)
 
 Purpose
 ----------
