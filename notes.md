@@ -21,6 +21,7 @@ This is not a valid MARC21 identifier: https://www.loc.gov/marc/bibliographic/bd
 --------
 I would not know how to treat this:
 
+```
 <!--Non-MARC Information Field: record created by-->
 <datafield tag="887" ind1=" " ind2=" ">
 	<subfield code="a">conversion</subfield>
@@ -51,5 +52,6 @@ I would not know how to treat this:
 	<subfield code="2"> http://webi.provant.be/brocade/catalog/catxml.dtd
 		BSECTION/IM/JU/@ju2sv </subfield>
 </datafield>
+```
 
 It does look all the same, but it should have different meanings. I believe this data should be different.
