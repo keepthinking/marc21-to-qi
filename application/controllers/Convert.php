@@ -188,6 +188,7 @@ class Convert extends CI_Controller {
 				    						{
 												if($config['type'] == 'list')
 												{
+							    					// Static values
 							    					if(!empty($config['static_fields']))
 							    						$static_fields = $config['static_fields'];
 							    					else
@@ -217,10 +218,21 @@ class Convert extends CI_Controller {
 				    					$value = trim($node[$code]);
 										if($config['type'] == 'list')
 										{
+					    					// Static fields
 					    					if(!empty($config['static_fields']))
 					    						$static_fields = $config['static_fields'];
 					    					else
 					    						$static_fields = array();
+
+					    					// Extra values in the same list
+					    					if(!empty($config['extra_fields']))
+					    					{
+					    						foreach($config['extra_fields'] as $e_key => $e_value)
+					    						{
+					    							if(!empty($node[$e_key]))
+					    								$static_fields[$e_value] = trim($node[$e_key]);
+					    						}
+					    					}
 											$value = $this->model->upsert($value, $config['table'], $config['table_type'], $static_fields);
 										}
 										$xref[$config['name']] = $value;

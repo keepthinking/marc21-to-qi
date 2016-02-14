@@ -1,8 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+ini_set('memory_limit','1024M');
 
 // File to use
-$config['xmlfile'] = APPPATH . "data/sample.xml";
+$config['xmlfile'] = APPPATH . "data/data.xml";
 
 // Mapping control fields
 $config['controlfields'] = array(
@@ -75,8 +76,8 @@ $config['datafields'] = array(
     '260' => array('type' => 'field', // '260' => 'publication',
    		'config' => array(
             'a' => array('type' => 'text', 'name' => 'published_place'),
-            'a' => array('type' => 'text', 'name' => 'publisher'),
-            'a' => array('type' => 'text', 'name' => 'published_date'),
+            'b' => array('type' => 'text', 'name' => 'publisher'),
+            'c' => array('type' => 'text', 'name' => 'published_date'),
         )
    	), // '300' => 'description',
     '300' => array('type' => 'field', // '300' => 'description',
@@ -94,7 +95,7 @@ $config['datafields'] = array(
     '490' => array('type' => 'field', // '490' => 'series',
    		'config' => array(
             'a' => array('type' => 'text', 'name' => 'series_statement'),
-            'b' => array('type' => 'text', 'name' => 'series_volume'),
+            'v' => array('type' => 'text', 'name' => 'series_volume'),
         )
    	),    
     '500' => array('type' => 'field', 
@@ -115,14 +116,16 @@ $config['datafields'] = array(
     '650' => array('type' => 'xref', 'table' => 'bibliography_thesaurus_term_xrefs', 'relationship' => 'bibliography_topical_term', 
     	'config' => array(
             'a' => array('type' => 'list', 'name' => 'thesaurus_term_id', 'table' => 'thesaurus_term', 'table_type' => 'list', 
-            	'static_fields' => array('thesaurus_facet_id' => '777')
+            	'static_fields' => array('thesaurus_facet_id' => '777'),
+                'extra_fields' => array('2' => 'marc_code')
             ),
         )
     ),
     '651' => array('type' => 'xref', 'table' => 'bibliography_thesaurus_term_xrefs', 'relationship' => 'bibliography_geographic_term', 
     	'config' => array(
             'a' => array('type' => 'list', 'name' => 'thesaurus_term_id', 'table' => 'thesaurus_term', 'table_type' => 'list', 
-            	'static_fields' => array('thesaurus_facet_id' => '778')
+            	'static_fields' => array('thesaurus_facet_id' => '778'),
+                'extra_fields' => array('2' => 'marc_code')
             ),
         )
     ),
@@ -145,10 +148,31 @@ $config['datafields'] = array(
         )
     ),
     '700' => array('type' => 'xref', 'table' => 'actor_bibliography_xrefs', 'relationship' => 'person_bibliography',
-    	'config' => array(
+        'config' => array(
             'a' => array('type' => 'list', 'name' => 'actor_id', 'table' => 'actor', 'table_type' => 'content',
-                'static_fields' => array('actor_type_id' => '30')
+                'static_fields' => array('actor_type_id' => '30'),
+                'extra_fields' => array('0' => 'marc_code', )
             ),
         )
+    ),
+    // Location
+    '852' => array('type' => 'field', 
+        'config' => array(
+            'a' => array('type' => 'list', 'name' => 'bibliography_location_collection_id', 'table' => 'bibliography_location_collection', 'table_type' => 'list'),
+            'b' => array('type' => 'list', 'name' => 'bibliography_location_section_id', 'table' => 'bibliography_location_section', 'table_type' => 'list'),
+            'c' => array('type' => 'text', 'name' => 'location_shelf'),
+            'z' => array('type' => 'text', 'name' => 'location_public_note'),
+            'x' => array('type' => 'text', 'name' => 'location_non_public_note'),
+            'p' => array('type' => 'text', 'name' => 'location_piece_designation'),
+       ),
+    ),
+    // Conversion
+    '884' => array('type' => 'field', 
+        'config' => array(
+            'a' => array('type' => 'text', 'name' => 'marc_conversion_process'),
+            'g' => array('type' => 'text', 'name' => 'marc_conversion_date'),
+            'k' => array('type' => 'text', 'name' => 'marc_source_indentifier'),
+            'q' => array('type' => 'text', 'name' => 'marc_conversion_agency'),
+       ),
     ),
 );
