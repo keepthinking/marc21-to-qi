@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ini_set('memory_limit','1024M');
 
 // File to use
-$config['xmlfile'] = APPPATH . "data/data.xml";
+$config['xmlfile'] = APPPATH . "data/data2.xml";
 
 // Mapping control fields
 $config['controlfields'] = array(
@@ -153,10 +153,22 @@ $config['datafields'] = array(
                 'static_fields' => array('actor_type_id' => '30'),
                 'extra_fields' => array('0' => 'marc_code', )
             ),
+            '4' => array('type' => 'list', 'name' => 'actor_qualifier_id', 'table' => 'actor_qualifier', 'table_type' => 'list'),
         )
     ),
-    // Location
-    '852' => array('type' => 'field', 
+    // Location as field (outdated)
+    // '852' => array('type' => 'field', 
+    //     'config' => array(
+    //         'a' => array('type' => 'list', 'name' => 'bibliography_location_collection_id', 'table' => 'bibliography_location_collection', 'table_type' => 'list'),
+    //         'b' => array('type' => 'list', 'name' => 'bibliography_location_section_id', 'table' => 'bibliography_location_section', 'table_type' => 'list'),
+    //         'c' => array('type' => 'text', 'name' => 'location_shelf'),
+    //         'z' => array('type' => 'text', 'name' => 'location_public_note'),
+    //         'x' => array('type' => 'text', 'name' => 'location_non_public_note'),
+    //         'p' => array('type' => 'text', 'name' => 'location_piece_designation'),
+    //    ),
+    // ),
+    // Location as XREFS (2016-02-20)
+    '852' => array('type' => 'xref', 'table' => 'bibliography_location_xrefs', 'relationship' => 'bibliography_location',
         'config' => array(
             'a' => array('type' => 'list', 'name' => 'bibliography_location_collection_id', 'table' => 'bibliography_location_collection', 'table_type' => 'list'),
             'b' => array('type' => 'list', 'name' => 'bibliography_location_section_id', 'table' => 'bibliography_location_section', 'table_type' => 'list'),
